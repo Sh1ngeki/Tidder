@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tidder</title>
+    <link rel="stylesheet" href="/static/css/app.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/feed" class="main_header">
+        <!-- <img
+          src="{{ url_for('static', filename='images/reddit-32.png') }}"
+          alt="Tidder Logo"
+        /> -->
+        <img src="/static/images/reddit-32.png" alt="Tidder Logo" />
+        <p class="tidder" id="Montserrat">Tidder</p>
+      </a>
+      <!-- <img src="/img/home.png" alt="Home Logo" class="home-logo" /> -->
+      <form name="search_query" action="#" type="text">
+        <input
+          type="text"
+          name="search_query"
+          id="search"
+          placeholder="Search Tidder"
+        />
+      </form>
+      <head class="nav-logos">
+        <a href="#">
+          <!-- <img
+            src="{{ url_for('static', filename='images/popular.png') }}"
+            alt="Popular Logo"
+            class="nav-logo"
+            title="Popular"
+          /> -->
+          <img
+            src="/static/images/popular.png"
+            alt="Popular Logo"
+            class="nav-logo"
+            title="Popular"
+          />
+        </a>
+        <a href="#">
+          <!-- <img
+            src="{{ url_for('static', filename='images/chat logo.png') }}"
+            alt="Chat Logo"
+            class="nav-logo"
+            title="Chat"
+          /> -->
+          <img
+            src="/static/images/chat logo.png"
+            alt="Chat Logo"
+            class="nav-logo"
+            title="Chat"
+          />
+        </a>
+        <a href="#">
+          <!-- <img
+            src="{{ url_for('static', filename='images/friends.png') }}"
+            alt="Friends Logo"
+            class="nav-logo"
+            title="Friends"
+          /> -->
+          <img
+            src="/static/images/friends.png"
+            alt="Friends Logo"
+            class="nav-logo"
+            title="Friends"
+          />
+        </a>
+      </head>
+      <a href="{{ url_for('logout') }}">
+        <button class="logsign">
+          <strong>LOG OUT</strong>
+        </button>
+      </a>
+      <a href="#" class="user-info">
+        <div>{{ user.username }}</div>
+      </a>
+    </header>
+    <section class="container main" style="margin-right: 100px">
+        <div class="post">
+          <h3> <a href="/profile/{{post_.users.username}}">{{ post_.users.username }}</a>  </h3>
+          <p>{{ post_.text }}</p>
+          <h3>Date Created: {{ post_.date_created }}</h3>
+        <div class="post-flex block">
+          <img
+            src="/static/images/comment-icon.svg"
+            alt="comment logo"
+            class="comment-logo"
+          />
+          <span>comment</span>
+        </div>
+
+      <form method="POST" action="/write-comment/{{post_.id}}" >
+          <div class="comment-section">
+        <p>Comment as {{user.username}}</p>
+        <textarea
+            placeholder="What are your thoughts?"
+            name="comment-text"
+            id="post"
+            cols="30"
+            rows="10"
+></textarea>
+
+        <button class="comment-button" type="submit">Comment</button>
+      </div>
+        </form>
+      <hr class="comment-hr" />
+
+          {% for comment in post_.comments %}
+      <div class="user-comment">
+      <div class="comment">
+        <h3><a href="/profile/{{comment.users.username}}">{{ comment.users.username }}</a></h3>
+        <strong>{{comment.text}}</strong>
+        <small>{{comment.date_created}}</small>
+
+        {% if user.id == comment.author or user.id == post_.author%}
+        <button type="button"> <a href="/delete-comment/{{comment.id}}">Delete</a> </button>
+        {% endif %}
+      </div>
+
+
+      </div>
+          {% endfor %}
+    </section>
+
+  </body>
+</html>
+
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static//css/app.css" />
+</head>
+<body>
+    <h3>{{username}}'s posts</h3>
+    {%for post in posts%}
+    <div class="post">
+          <h3> <a href="/profile"></a>{{ post.user.username }}</h3>
+          <p>{{ post.text }}</p>
+          <h3>Date Created: {{ post.date_created }}</h3>
+          {% if user.id == post.author  %}
+          <button type="button"> <a href="/delete-post/{{post.id}}">Delete</a> </button>
+          {% endif %}
+    </div>
+    {% endfor %}
+</body>
+</html>

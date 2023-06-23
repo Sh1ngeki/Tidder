@@ -1,0 +1,55 @@
+ {% extends 'baseuser.html' %} {%block content%}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/static/css/style.css" />
+<img src="/static/images/reddit photo.png" alt="good photo" class="background-photo" />
+
+<section class="index-section">
+  <h1>Log in</h1>
+  <p>By continuing, you agree User Agreement and Privacy Policy.</p>
+  <button class="google">
+    <!-- <img
+    src="{{ url_for('static', filename='images/google.png') }}"
+    alt="Google"
+  /> -->
+    <img src="/static/images/google.png" alt="Google" />
+    <span class="googletext">Continue with Google</span>
+  </button>
+
+  <hr class="hr-one" />
+  <h2>OR</h2>
+  <hr class="hr-two" />
+  <form method="POST">
+    <input class="user" type="text" name="username" placeholder="USERNAME" />
+    <input
+      class="user"
+      type="password"
+      name="password"
+      placeholder="PASSWORD"
+    />
+    <button type="submit" class="submit">LOG IN</button>
+  </form>
+  <div class="forgot-info">
+    <p>
+      Forgot your <a href="/forgotusername"><strong>username</strong></a>
+      or
+      <a href="/forgotpassword"><strong>password</strong></a> ?
+    </p>
+  </div>
+  <div class="signup-or-login">
+    <p>
+      New to Tidder? <a href="/signup"><strong>SIGN UP</strong></a>
+    </p>
+  </div>
+</section>
+ {% endblock %}

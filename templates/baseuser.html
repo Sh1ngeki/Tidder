@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tidder</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+</head>
+<body>
+
+
+
+{% block messages %}
+{% with messages = get_flashed_messages(with_categories=True) %}
+  {% if messages %}
+    <div class="flash-message">
+      {% for category, message in messages %}
+        <div class="alert {% if category == 'success' %}success{% elif category == 'error' %}error{% endif %}">
+          <span class="exclamation-mark">
+              {% if category == 'success' %}&#9989;
+              {% elif category == 'error' %}&#9888;
+              {% endif %}
+          </span> {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+{% endblock %}
+
+
+
+
+{%block content%}
+{% endblock %}
+
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+ {% extends 'baseuser.html' %} {%block content%}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/static/css/style.css" />
+<img src="/static/images/reddit photo.png" alt="good photo" class="background-photo" />
+
+<section class="signup-section">
+  <h1>Sign Up</h1>
+  <p>
+    By continuing, you are setting up a Reddit <br />
+    account and agree to our User Agreement and <br />
+    Privacy Policy.
+  </p>
+  <button class="google">
+     <img
+    src="{{ url_for('static', filename='images/google.png') }}"
+    alt="Google"
+  />
+<!--    <img src="/static/images/google.png" alt="Google" />-->
+
+    <span class="googletext">Continue with Google</span>
+  </button>
+
+  <hr class="hr-one mt-30" />
+  <h2 class="mt-30">OR</h2>
+  <hr class="hr-two mt-30" />
+
+  <form method="post">
+    <input
+      class="user"
+      type="email"
+      name="email"
+      required
+      placeholder="EMAIL"
+    />
+    <input
+      class="user"
+      type="text"
+      name="username"
+      required
+      placeholder="USERNAME"
+    />
+    <input
+      class="user"
+      type="password"
+      name="password"
+      required
+      placeholder="PASSWORD"
+    />
+    <button type="submit" class="submit">SIGN UP</button>
+  </form>
+
+  <div class="signup-or-login">
+    <p>
+      Back To <a href="/"><strong>LOG IN</strong></a>
+    </p>
+  </div>
+</section>
+ {% endblock %}

@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #efeeee;
+  font-family: "Montserrat", sans-serif;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* HEADER */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 50px;
+  gap: 10px;
+}
+
+.main_header {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.main_header:visited {
+  color: black;
+}
+
+.tidder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  align-self: center;
+  color: #000;
+}
+
+form {
+  margin-left: 250px;
+  align-self: center;
+}
+
+#search {
+  width: 600px;
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: #efeeee;
+  align-items: center;
+  padding: 10px;
+  margin-right: 40px;
+}
+
+#search:hover {
+  border: 1px solid green;
+}
+
+.nav-logo {
+  margin-right: 20px;
+  width: 32px;
+  height: 32px;
+}
+
+.nav-logo:hover {
+  background-color: #bbbab9;
+  border-radius: 8px;
+}
+
+.user-info {
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.user-info {
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.user-info:visited {
+  color: black;
+}
+.logsign {
+  margin-right: 10px;
+  width: 100px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+}
+.logsign:hover {
+  background-color: #70ecec;
+  transition: 1s all ease;
+}
+
+/* POST */
+
+h1 {
+  margin-top: 200px;
+}
+
+.post-hr {
+  width: 610px;
+  margin-top: 30px;
+}
+
+#post {
+  position: absolute;
+  top: 300px;
+  left: 240px;
+  width: 610px;
+}
+
+.post-button {
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 490px;
+  left: 705px;
+  width: 150px;
+  height: 50px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background-color: #444444;
+  color: #fff;
+  cursor: pointer;
+}
+
+.post-button:hover {
+  background-color: #757575;
+}
+
+.posting-to-tidder {
+  position: relative;
+  left: 950px;
+  width: 350px;
+  height: 240px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.title {
+  padding: 10px;
+}
+
+.tidder-logo {
+  width: 40px;
+}
+
+ol {
+  width: 330px;
+  margin-left: 10px;
+}
+
+li {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding: 1px;
+}
+
+/* FOOTER */
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 460px;
+}

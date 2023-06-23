@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* background-image: url("/static/images/mes.jpg"); */
+}
+
+.background-photo {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+}
+/* ########################################### */
+/* SECTIONS */
+.index-section {
+  position: relative;
+  top: 100px;
+  left: 180px;
+}
+
+.signup-section {
+  position: relative;
+  top: 100px;
+  left: 180px;
+}
+
+.username-section {
+  position: relative;
+  top: 250px;
+  left: 180px;
+}
+
+.password-section {
+  position: relative;
+  top: 200px;
+  left: 180px;
+}
+/* ########################################### */
+h1 {
+  font-size: 20px;
+}
+
+p {
+  height: auto;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.google {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  width: 300px;
+  height: 45px;
+  border-radius: 40px;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #c9c9c9;
+}
+.google:hover {
+  cursor: pointer;
+  background-color: #f3eeee;
+  transition: 0.2s all ease;
+}
+
+.googletext {
+  margin-left: 20px;
+}
+
+.hr-one {
+  position: absolute;
+  top: 175px;
+  height: 1px;
+  width: 125px;
+}
+
+h2 {
+  position: absolute;
+  top: 166px;
+  left: 135px;
+  font-size: 16px;
+  color: #878a8c;
+}
+
+.hr-two {
+  position: absolute;
+  top: 175px;
+  left: 175px;
+  height: 1px;
+  width: 125px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h1,
+p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.user {
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+  width: 300px;
+  height: 45px;
+}
+.user:hover {
+  background-color: #f3eeee;
+  transition: 0.2s all ease;
+}
+
+.user::placeholder {
+  color: #bcbbbb;
+  padding-left: 15px;
+}
+
+.submit {
+  background-color: #0079d3;
+  width: 300px;
+  height: 35px;
+  border: 1px solid #c9c9c9;
+  border-radius: 4px;
+  color: white;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background-color: #2989d3;
+}
+
+.enter:hover {
+  background-color: #70ecec;
+  transition: 1s all ease;
+}
+
+.forgot-info {
+  margin-top: 20px;
+}
+
+.forgot-info a {
+  text-decoration: none;
+}
+
+.forgot-info a:link {
+  color: #6eb2e7;
+}
+
+.signup-or-login {
+  margin-top: 30px;
+}
+
+.signup-or-login a {
+  text-decoration: none;
+}
+
+.signup-or-login a:link {
+  color: #6eb2e7;
+}
+
+.signup-or-login a:visited {
+  color: #6eb2e7;
+}
+
+.flash-message {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  animation: fade-in 1s ease-in-out;
+  font-size: 20px;
+}
+
+.exclamation-mark {
+  color: red;
+  font-size: 1.2em;
+  margin-right: 5px;
+}
+
+.username-buttons {
+  margin-top: 30px;
+}
+
+.username-buttons a {
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.username-buttons a:visited {
+  color: #6eb2e7;
+}
+
+.forgot-username {
+  margin-top: 50px;
+}
+
+.password-buttons {
+  color: #6eb2e7;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.password-buttons a {
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.password-buttons a:visited {
+  color: #6eb2e7;
+}
+
+
+
+
+
+
+
+
+
+
