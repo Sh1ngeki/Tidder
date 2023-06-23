@@ -224,13 +224,24 @@ def delete_comment(comment_id):
 @app.route('/profile/<username>')
 @login_required
 def profile(username):
+    key = '887aaff89bee4fd742287bfd4afa2483'
+    city = 'Tbilisi'
+    url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={key}&units=metric'
+    r = requests.get(url)
+    result = json.loads(r.text)
+    temp = result['main']['temp']
+    climat = result['weather'][0]['main']
+    pressure = result['main']['pressure']
+    wind = result['wind']['speed']
     user = Users.query.filter_by(username=username).first()
     if not user:
         flash('No user with that username exists.', category='error')
         return redirect(url_for('feed'))
     posts = Post.query.filter_by(author=user.id).all()
     # posts = Users.posts
-    return render_template('satestod.html', user=current_user, posts=posts, username=username)
+    return render_template('satestod.html', user=current_user, posts=posts, username=username, city=city, temp=temp,
+                           climat=climat,
+                           pressure=pressure, wind=wind)
 
 
 @app.route('/like-post/<post_id>', methods=['GET'])
@@ -248,9 +259,6 @@ def like(post_id):
         db.session.add(like)
         db.session.commit()
     return redirect(url_for('feed'))
-
-
-
 
 
 if __name__ == "__main__":
