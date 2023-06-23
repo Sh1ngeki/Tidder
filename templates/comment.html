@@ -94,16 +94,18 @@
     </div>
     <section class="container main" style="margin-right: 100px">
         <div class="post">
-          <h3> <a href="/profile/{{post_.users.username}}" class="user-info">{{ post_.users.username }}</a>  </h3>
+          <h3> <a href="/profile/{{post_.users.username}}" class="user-info">Posted by {{ post_.users.username }}</a>  </h3>
           <p>{{ post_.text }}</p>
           <h3>Date Created: {{ post_.date_created }}</h3>
         <div class="post-flex block">
-          <img
-            src="/static/images/comment-icon.svg"
-            alt="comment logo"
-            class="comment-logo"
-          />
-          <span> {{ post_.comments|length}} comments</span>
+            <div class="post-flex-comment block">
+              <img
+                src="/static/images/comment-icon.svg"
+                alt="comment logo"
+                class="comment-logo"
+              />
+              <span> {{ post_.comments|length}} comments</span>
+            </div>
         </div>
 
       <form method="POST" action="/write-comment/{{post_.id}}" >
@@ -125,7 +127,7 @@
       <div class="user-comment">
       <div class="comment">
           <div class="comment-flex">
-            <h3><a href="/profile/{{comment.users.username}}" class="user-info">{{ comment.users.username }}</a></h3>
+            <h3><a href="/profile/{{comment.users.username}}" class="user-info">Commented by {{ comment.users.username }}</a></h3>
             <small>{{comment.date_created}}</small>
           </div>
           <strong>{{comment.text}}</strong>

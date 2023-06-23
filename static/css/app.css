@@ -115,6 +115,7 @@ form {
 .user-info:visited {
   color: black;
 }
+
 .logsign {
   margin-right: 10px;
   width: 100px;
@@ -125,6 +126,7 @@ form {
   color: #000;
   cursor: pointer;
 }
+
 .logsign:hover {
   background-color: #09d25d;
   transition: 0.2s all ease;
@@ -444,7 +446,6 @@ form {
 
 
 .delete-button{
-  color: #000;
   cursor: pointer;
   text-decoration: none;
   color: #fff;
@@ -455,6 +456,7 @@ form {
   height: 25px;
   background-color: #09d25d;
   border: none;
+  border-radius: 25px;
 }
 
 

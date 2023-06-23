@@ -112,7 +112,14 @@ form {
   color: #fff;
 }
 
+.logsign a{
+  text-decoration: none;
+  color: #000;
+}
 
+.logsign a:visited{
+  color: #000;
+}
 
 /* POST */
 

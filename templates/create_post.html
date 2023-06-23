@@ -82,8 +82,9 @@
       </head>
 
       <button class="logsign">
-        <a href="{{ url_for('logout') }}"> <strong>LOG OUT</strong> </a>
+        <strong><a href="{{ url_for('logout') }}"> LOG OUT </a></strong>
       </button>
+
       <a href="/profile/{{user.username}}" class="user-info">
         <div> {{ user.username }}</div>
       </a>
