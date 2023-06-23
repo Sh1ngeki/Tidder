@@ -24,6 +24,7 @@ body {
 }
 /* ########################################### */
 /* SECTIONS */
+
 .index-section {
   position: relative;
   top: 100px;
@@ -157,6 +158,7 @@ p {
 }
 
 .forgot-info a {
+  color: #6eb2e7;
   text-decoration: none;
 }
 
