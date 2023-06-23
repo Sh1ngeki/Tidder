@@ -342,6 +342,11 @@ form {
   margin-top: 10px;
 }
 
+.main-home-post a{
+  color: #000;
+  text-decoration: none;
+}
+
 .main-home-post:hover {
   background-color: #f1b07b;
   cursor: pointer;
@@ -411,13 +416,16 @@ form {
   width: 650px;
   background-color: #fff;
   padding-left: 60px;
-  margin-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 .user-comment span {
   color: #636262;
 }
 
+.comment-flex{
+  display: flex;
+}
 
 .delete-post {
   position: absolute;
@@ -442,6 +450,14 @@ form {
   color: #fff;
 }
 
+.comment-delete{
+  width: 50px;
+  height: 25px;
+  background-color: #09d25d;
+  border: none;
+}
+
+
 .trash-logo{
   width: 20px;
   height: 20px;
@@ -458,9 +474,3 @@ form {
   width: 30px;
   margin-left: 600px;
 }
-
-.i{
-  text-decoration: none;
-}
-
-

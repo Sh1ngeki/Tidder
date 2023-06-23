@@ -99,7 +99,7 @@
     </div>
     <section class="container main" style="margin-right: 100px">
         <div class="post">
-          <h3> <a href="/profile/{{post_.users.username}}">{{ post_.users.username }}</a>  </h3>
+          <h3> <a href="/profile/{{post_.users.username}}" class="user-info">{{ post_.users.username }}</a>  </h3>
           <p>{{ post_.text }}</p>
           <h3>Date Created: {{ post_.date_created }}</h3>
         <div class="post-flex block">
@@ -121,7 +121,6 @@
             cols="30"
             rows="10">
         </textarea>
-
         <button class="comment-button" type="submit">Comment</button>
       </div>
         </form>
@@ -130,16 +129,18 @@
           {% for comment in post_.comments %}
       <div class="user-comment">
       <div class="comment">
-        <h3><a href="/profile/{{comment.users.username}}">{{ comment.users.username }}</a></h3>
-        <strong>{{comment.text}}</strong>
-        <small>{{comment.date_created}}</small>
+          <div class="comment-flex">
+            <h3><a href="/profile/{{comment.users.username}}" class="user-info">{{ comment.users.username }}</a></h3>
+            <small>{{comment.date_created}}</small>
+          </div>
+          <strong>{{comment.text}}</strong>
 
         {% if user.id == comment.author or user.id == post_.author%}
-        <button type="button"> <a href="/delete-comment/{{comment.id}}">Delete</a> </button>
+        <button type="button" class="comment-delete">
+            <a href="/delete-comment/{{comment.id}}" class="delete-button">Delete</a>
+        </button>
         {% endif %}
       </div>
-
-
       </div>
           {% endfor %}
     </section>
