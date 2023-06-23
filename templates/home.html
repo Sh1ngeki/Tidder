@@ -166,6 +166,9 @@
                 alt="comment logo"
                 class="comment-logo"
               />
+              {% if user.id == post.author  %}
+            <button class="delete-post" type="button"> <a href="/delete-post/{{post.id}}">Delete</a> </button>
+                {% endif %}
               <span>comment</span>
             </div>
           </a>

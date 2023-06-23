@@ -102,13 +102,17 @@ form {
   height: 40px;
   overflow: hidden;
   border-radius: 30px;
-  font-family: "Montserrat", sans-serif;
   border: none;
+  color: #000;
+  cursor: pointer;
 }
 .logsign:hover {
-  background-color: #70ecec;
-  transition: 1s all ease;
+  background-color: #09d25d;
+  transition: 0.2s all ease;
+  color: #fff;
 }
+
+
 
 /* POST */
 

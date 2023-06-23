@@ -400,3 +400,9 @@ form {
 .user-comment span {
   color: #636262;
 }
+
+
+.delete-post {
+  position: absolute;
+  left: 550px;
+}
