@@ -98,21 +98,24 @@
           <i> <img class = "react-like" src="/static/images/heart.png">{{post.likes|length}} </i>
           </a>
           {%endif%}
-          <h3> <a href="/profile/{{post.users.username}}">{{ post.users.username }}</a>  </h3>
+          <h3> <a href="/profile/{{post.users.username}}" class="post-username">Posted by {{ post.users.username }}</a>  </h3>
           <p>{{ post.text }}</p>
           <h3>Date Created: {{ post.date_created }}</h3>
 
           <a href="/create-comment/{{post.id}}" class="comment-a">
             <div class="post-flex">
-              <img
-                src="/static/images/comment-icon.svg"
-                alt="comment logo"
-                class="comment-logo"
-              />
-
-              <span>{{ post.comments|length}} comment</span>
+                <div class="post-flex-comment">
+                  <img
+                    src="/static/images/comment-icon.svg"
+                    alt="comment logo"
+                    class="comment-logo"
+                  />
+                  <span>{{ post.comments|length}} comment</span>
+                </div>
               {% if user.id == post.author  %}
-            <button class="delete-post" type="button"> <a href="/delete-post/{{post.id}}">Delete</a> </button>
+            <button class="delete-post" type="button">
+                <a href="/delete-post/{{post.id}}" class="delete-button">Delete</a>
+            </button>
                 {% endif %}
             </div>
 
@@ -125,13 +128,20 @@
 
       <section class="content">
         <div class="main-weather">
-          <p>
-            <h4>{{city}}</h4>  <br />
-          <h4>{{climat}}</h4>
-          <h4>{{temp}}°</h4>  <br />
-            Wind: {{ wind }} <br />
-            Pressure: {{ pressure }} <br />
-          </p>
+            <h1>{{ city }}</h1>
+            <div class="main-weather-flex">
+                <div>
+                    <img src="/static/images/weather.svg" alt="weather logo"/>
+                    <p>{{ climat }}</p>
+                </div>
+                <div>
+                    <p>Celsius: {{ temp }}</p>
+                </div>
+                <div style="font-size: 14px">
+                    <p>Pressure: {{ pressure }}</p>
+                    <p>Wind: {{ wind }}</p>
+                </div>
+            </div>
         </div>
 
 
