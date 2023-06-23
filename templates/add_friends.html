@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{user.username}}</title>
+    <title>Add Friends</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,10 +16,6 @@
       href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap"
       rel="stylesheet"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/app.css') }}"
-    /> -->
     <link rel="stylesheet" href="/static//css/app.css" />
   </head>
   <body>
@@ -27,15 +23,10 @@
     <!-- HEADER -->
     <header>
       <a href="/feed" class="main_header">
-        <!-- <img
-          src="{{ url_for('static', filename='images/reddit-32.png') }}"
-          alt="Tidder Logo"
-        /> -->
         <img src="/static/images/reddit-32.png" alt="Tidder Logo" />
         <p class="tidder" id="Montserrat">Tidder</p>
       </a>
-      <!-- <img src="/img/home.png" alt="Home Logo" class="home-logo" /> -->
-      <form name="search_query" action="#" type="text">
+      <form name="search_query" method="POST" action="/add_friends" type="text">
         <input
           type="text"
           name="search_query"
@@ -45,7 +36,6 @@
       </form>
       <head class="nav-logos">
         <a href="#">
-
           <img
             src="/static/images/popular.png"
             alt="Popular Logo"
@@ -54,7 +44,6 @@
           />
         </a>
         <a href="#">
-
           <img
             src="/static/images/chat logo.png"
             alt="Chat Logo"
@@ -62,8 +51,7 @@
             title="Chat"
           />
         </a>
-        <a href="/friends">
-
+        <a href="#">
           <img
             src="/static/images/friends.png"
             alt="Friends Logo"
@@ -86,46 +74,28 @@
     <!-- MAIN -->
     <div class="flex">
       <section class="main">
-
-        {% for post in posts %}
-        <div class="post">
-          <h3> <a href="/profile/{{post.users.username}}">{{ post.users.username }}</a>  </h3>
-          <p>{{ post.text }}</p>
-          <h3>Date Created: {{ post.date_created }}</h3>
-
-          <a href="/create-comment/{{post.id}}" class="comment-a">
-            <div class="post-flex">
-              <img
-                src="/static/images/comment-icon.svg"
-                alt="comment logo"
-                class="comment-logo"
-              />
-
-              <span>{{ post.comments|length}} comment</span>
-              {% if user.id == post.author  %}
-            <button class="delete-post" type="button"> <a href="/delete-post/{{post.id}}">Delete</a> </button>
-                {% endif %}
-            </div>
-
-          </a>
-        </div>
-        {% endfor %}
+<!--        {% for user in users %}-->
+<!--        <div class="post">-->
+<!--          <a href="/profile/{{user.username}}">-->
+<!--            <h1>{{user.username}}</h1>-->
+<!--          </a>-->
+<!--          <button style="margin-top: 10px"  type="submit">Add Friend</button>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+        {% if users %}
+    {% for user in users %}
+      <div class="post">
+        <a href="/profile/{{ user.username }}">
+          <h1>{{ user.username }}</h1>
+        </a>
+        <button style="margin-top: 10px" type="submit">Add Friend</button>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No users found.</p>
+  {% endif %}
       </section>
 
-      <section class="content">
-        <div class="main-weather">
-          <p>
-            <h4>{{city}}</h4>  <br />
-          <h4>{{climat}}</h4>
-          <h4>{{temp}}°</h4>  <br />
-            Wind: {{ wind }} <br />
-            Pressure: {{ pressure }} <br />
-          </p>
-        </div>
-
-
-
-      </section>
     </div>
     <a href="#"> <button class="back-to-top">Back to top</button> </a>
   </body>
