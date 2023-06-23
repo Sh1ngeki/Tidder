@@ -13,6 +13,12 @@ login_manager = LoginManager()
 login_manager.login_view = 'login'
 login_manager.init_app(app)
 
+class Like(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    date_created = db.Column(db.DateTime(timezone=True), default=func.now())
+    author = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id', ondelete='CASCADE'), nullable=False)
+
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -28,7 +34,7 @@ class Post(db.Model):
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     author = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'))
     comments = db.relationship('Comment', backref='post', passive_deletes=True)
-
+    likes = db.relationship('Like', backref='post', passive_deletes=True)
 
 class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -38,6 +44,7 @@ class Users(db.Model, UserMixin):
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     posts = db.relationship('Post', backref='users', passive_deletes=True)
     comments = db.relationship('Comment', backref='users', passive_deletes=True)
+    likes = db.relationship('Like', backref='users', passive_deletes=True)
 
     def __init__(self, username, email, password):
         self.username = username
