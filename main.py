@@ -13,6 +13,7 @@ login_manager = LoginManager()
 login_manager.login_view = 'login'
 login_manager.init_app(app)
 
+
 class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
@@ -35,6 +36,7 @@ class Post(db.Model):
     author = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'))
     comments = db.relationship('Comment', backref='post', passive_deletes=True)
     likes = db.relationship('Like', backref='post', passive_deletes=True)
+
 
 class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -219,9 +221,20 @@ def profile(username):
     return render_template('satestod.html', user=current_user, posts=posts, username=username)
 
 
-@app.route('/react')
-def react():
-    pass
+@app.route('/like-post/<post_id>', methods = ['GET'])
+def like(post_id):
+    post = Post.query.filter_by(id=post_id)
+    like = Like.query.filter_by(author=current_user.id, post_id=post_id).first()
+    if not post:
+        flash('Post does not exists.', category='error')
+    elif like:
+        db.session.delete(like)
+        db.session.commit()
+    else:
+        like = Like(author = current_user.id, post_id=post_id)
+        db.session.add(like)
+        db.session.commit()
+    return redirect(url_for('feed'))
 
 
 

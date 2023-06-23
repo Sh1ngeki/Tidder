@@ -155,7 +155,17 @@
         </div>
         {% for post in posts %}
         <div class="post">
-          <img class = "react-like" src="/static/images/heart.png">
+          {% if user.id in post.likes|map(attribute = "author")|list %}
+          <a href="/like-post/{{post.id}}">
+          <i> <img class = "react-like" src="/static/images/heart colored.png">{{post.likes|length}} </i>
+          </a>
+          {% else %}
+          <a href="/like-post/{{post.id}}">
+          <i> <img class = "react-like" src="/static/images/heart.png">{{post.likes|length}} </i>
+          </a>
+          {%endif%}
+
+
           <h3> <a href="/profile/{{post.users.username}}">{{ post.users.username }}</a>  </h3>
           <p>{{ post.text }}</p>
           <h3>Date Created: {{ post.date_created }}</h3>
