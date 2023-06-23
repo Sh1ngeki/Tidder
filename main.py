@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user, login_required, logout_user, LoginManager, login_user, UserMixin
+import requests
+import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'tiddertidder'
@@ -132,8 +134,18 @@ def forgot_password():
 
 @app.route('/feed')
 def feed():
+    key = '887aaff89bee4fd742287bfd4afa2483'
+    city = 'Tbilisi'
+    url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={key}&units=metric'
+    r = requests.get(url)
+    result = json.loads(r.text)
+    temp = result['main']['temp']
+    climat = result['weather'][0]['main']
+    pressure = result['main']['pressure']
+    wind = result['wind']['speed']
     posts = Post.query.all()
-    return render_template('home.html', user=current_user, posts=posts)
+    return render_template('home.html', user=current_user, posts=posts, city=city, temp=temp, climat=climat,
+                           pressure=pressure, wind=wind)
 
 
 @app.route('/createpost', methods=['GET', 'POST'])
@@ -221,7 +233,8 @@ def profile(username):
     return render_template('satestod.html', user=current_user, posts=posts, username=username)
 
 
-@app.route('/like-post/<post_id>', methods = ['GET'])
+@app.route('/like-post/<post_id>', methods=['GET'])
+@login_required
 def like(post_id):
     post = Post.query.filter_by(id=post_id)
     like = Like.query.filter_by(author=current_user.id, post_id=post_id).first()
@@ -231,10 +244,12 @@ def like(post_id):
         db.session.delete(like)
         db.session.commit()
     else:
-        like = Like(author = current_user.id, post_id=post_id)
+        like = Like(author=current_user.id, post_id=post_id)
         db.session.add(like)
         db.session.commit()
     return redirect(url_for('feed'))
+
+
 
 
 
