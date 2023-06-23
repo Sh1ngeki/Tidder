@@ -78,6 +78,9 @@
         <div>{{ user.username }}</div>
       </a>
     </header>
+    <div class="comment-flash">
+        <h1>Flash</h1>
+    </div>
     <section class="container main" style="margin-right: 100px">
         <div class="post">
           <h3> <a href="/profile/{{post_.users.username}}">{{ post_.users.username }}</a>  </h3>
@@ -100,8 +103,8 @@
             name="comment-text"
             id="post"
             cols="30"
-            rows="10"
-></textarea>
+            rows="10">
+        </textarea>
 
         <button class="comment-button" type="submit">Comment</button>
       </div>

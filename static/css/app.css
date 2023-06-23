@@ -71,7 +71,6 @@ header {
 }
 
 form {
-  margin-left: 250px;
   align-self: center;
 }
 
@@ -136,6 +135,7 @@ form {
 .main {
   position: relative;
   top: 70px;
+  right: 150px;
 }
 
 .create-post {
@@ -224,8 +224,6 @@ form {
   top: 90px; */
   margin-bottom: 30px;
   width: 650px;
-  padding: 15px;
-
   background-color: #fff;
 }
 
@@ -333,7 +331,6 @@ form {
 /* COMMENT SECTION */
 
 .comment-section {
-
   font-family: "Montserrat", sans-serif;
   width: 650px;
   height: 250px;
@@ -394,7 +391,7 @@ form {
   width: 650px;
   background-color: #fff;
   padding-left: 60px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .user-comment span {
@@ -405,5 +402,10 @@ form {
 .delete-post {
   position: absolute;
   left: 550px;
+}
 
+.comment-flash{
+  position: absolute;
+  top: 100px;
+  left: 130px;
 }
