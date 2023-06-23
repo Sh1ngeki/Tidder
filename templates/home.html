@@ -93,7 +93,7 @@
           <strong>LOG OUT</strong>
         </button>
       </a>
-      <a href="#" class="user-info" style="font-size: 17px">
+      <a href="/profile/{{user.username}}" class="user-info" style="font-size: 17px">
         <div>{{ user.username }}</div>
       </a>
     </header>
@@ -166,10 +166,11 @@
                 alt="comment logo"
                 class="comment-logo"
               />
+
+              <span>{{ post.comments|length}} comment</span>
               {% if user.id == post.author  %}
             <button class="delete-post" type="button"> <a href="/delete-post/{{post.id}}">Delete</a> </button>
                 {% endif %}
-              <span>comment</span>
             </div>
           </a>
         </div>
@@ -183,6 +184,7 @@
             Have a happy Tidder day!
           </p>
         </div>
+
         <div class="main-home">
           <h1>Home</h1>
           <p>
@@ -190,8 +192,9 @@
             Community.
           </p>
           <hr class="main-hr" />
-          <button class="main-home-post">Create Tidder Post</button>
+          <button class="main-home-post"><a href="/createpost">Create Tidder Post</a></button>
         </div>
+
       </section>
     </div>
     <a href="#"> <button class="back-to-top">Back to top</button> </a>

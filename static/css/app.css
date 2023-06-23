@@ -250,7 +250,7 @@ form {
   display: flex;
   align-items: center;
   cursor: pointer;
-  width: 130px;
+  width: 150px;
   height: 40px;
   padding: 10px;
   border-radius: 10px;
@@ -405,4 +405,5 @@ form {
 .delete-post {
   position: absolute;
   left: 550px;
+
 }

@@ -162,7 +162,6 @@ def delete_post(id):
 @app.route('/create-comment/<post_id>')
 @login_required
 def create_comment(post_id):
-    # posts = Post.query.filter_by(id=post_id).all()
     post_ = Post.query.filter_by(id=post_id).first()
     return render_template('comment.html', user=current_user, post_=post_)
 
@@ -194,12 +193,11 @@ def delete_comment(comment_id):
     elif current_user.id != comment.author and current_user.id != comment.post.author:
         flash('You do not have permission to delete this comment.', category='error')
     else:
-        post_id = comment.post_id  # Access post_id attribute if comment exists
+        post_id = comment.post_id
         db.session.delete(comment)
         db.session.commit()
         flash('Comment deleted', category='success')
     return redirect(url_for('create_comment', post_id=post_id))
-
 
 
 @app.route('/profile/<username>')
