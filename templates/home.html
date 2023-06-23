@@ -155,6 +155,7 @@
         </div>
         {% for post in posts %}
         <div class="post">
+          <img class = "react-like" src="/static/images/heart.png">
           <h3> <a href="/profile/{{post.users.username}}">{{ post.users.username }}</a>  </h3>
           <p>{{ post.text }}</p>
           <h3>Date Created: {{ post.date_created }}</h3>
