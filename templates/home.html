@@ -157,13 +157,14 @@
           <i> <img class = "react-like" src="/static/images/heart colored.png">{{post.likes|length}} </i>
           </a>
           {% else %}
-          <a href="/like-post/{{post.id}}">
-          <i> <img class = "react-like" src="/static/images/heart.png">{{post.likes|length}} </i>
+          <a href="/like-post/{{post.id}}" class="like-logo">
+              <img class="react-like" src="/static/images/heart.png">
+              <i class="i">{{post.likes|length}} </i>
           </a>
           {%endif%}
 
 
-          <h3> <a href="/profile/{{post.users.username}}">{{ post.users.username }}</a>  </h3>
+          <h3> <a href="/profile/{{post.users.username}}" class="post-username">Posted by {{ post.users.username }}</a>  </h3>
           <p>{{ post.text }}</p>
           <h3>Date Created: {{ post.date_created }}</h3>
 
@@ -179,7 +180,9 @@
                   <span>{{ post.comments|length}} comment</span>
                 </div>
               {% if user.id == post.author  %}
-            <button class="delete-post" type="button"> <a href="/delete-post/{{post.id}}" class="delete-button">Delete</a> </button>
+            <button class="delete-post" type="button">
+                <a href="/delete-post/{{post.id}}" class="delete-button">Delete</a>
+            </button>
                 {% endif %}
             </div>
           </a>
