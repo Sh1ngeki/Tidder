@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/static//css/app.css" />
+    <link rel="stylesheet" href="/static/css/friends.css">
   </head>
   <body>
     <!-- ######################################################### -->
@@ -51,7 +52,7 @@
             title="Chat"
           />
         </a>
-        <a href="#">
+        <a href="/friends">
           <img
             src="/static/images/friends.png"
             alt="Friends Logo"
@@ -73,22 +74,14 @@
     <!-- ######################################################### -->
     <!-- MAIN -->
     <div class="flex">
-      <section class="main">
-<!--        {% for user in users %}-->
-<!--        <div class="post">-->
-<!--          <a href="/profile/{{user.username}}">-->
-<!--            <h1>{{user.username}}</h1>-->
-<!--          </a>-->
-<!--          <button style="margin-top: 10px"  type="submit">Add Friend</button>-->
-<!--        </div>-->
-<!--        {% endfor %}-->
+      <section class="add-users">
         {% if users %}
     {% for user in users %}
       <div class="post">
         <a href="/profile/{{ user.username }}">
-          <h1>{{ user.username }}</h1>
+          <h1 class="guest-user">{{ user.username }}</h1>
         </a>
-        <button style="margin-top: 10px" type="submit">Add Friend</button>
+        <button class="add-user-button" type="submit">Add Friend</button>
       </div>
     {% endfor %}
   {% else %}

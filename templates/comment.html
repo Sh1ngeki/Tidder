@@ -130,7 +130,7 @@
             <h3><a href="/profile/{{comment.users.username}}" class="user-info">Commented by {{ comment.users.username }}</a></h3>
             <small>{{comment.date_created}}</small>
           </div>
-          <strong>{{comment.text}}</strong>
+          <strong style="color: #09d25d">{{comment.text}}</strong>
 
         {% if user.id == comment.author or user.id == post_.author%}
         <button type="button" class="comment-delete">

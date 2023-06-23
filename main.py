@@ -132,7 +132,8 @@ def forgot_password():
     return render_template('resetpassword.html')
 
 
-@app.route('/feed')
+@app.route('/feed', methods=['GET', 'POST'])
+@login_required
 def feed():
     key = '887aaff89bee4fd742287bfd4afa2483'
     city = 'Tbilisi'
@@ -144,7 +145,8 @@ def feed():
     pressure = result['main']['pressure']
     wind = result['wind']['speed']
     posts = Post.query.all()
-    return render_template('home.html', user=current_user, posts=posts, city=city, temp=temp, climat=climat,
+    return render_template('home.html', user=current_user,  posts=posts, city=city, temp=temp,
+                           climat=climat,
                            pressure=pressure, wind=wind)
 
 

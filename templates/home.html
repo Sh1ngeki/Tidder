@@ -24,15 +24,12 @@
     <!-- HEADER -->
     <header>
       <a href="/feed" class="main_header">
-        <!-- <img
-          src="{{ url_for('static', filename='images/reddit-32.png') }}"
-          alt="Tidder Logo"
-        /> -->
+
         <img src="/static/images/reddit-32.png" alt="Tidder Logo" />
         <p class="tidder" id="Montserrat">Tidder</p>
       </a>
       <!-- <img src="/img/home.png" alt="Home Logo" class="home-logo" /> -->
-      <form name="search_query" action="#" type="text">
+      <form name="search_query" action="/feed" type="text">
         <input
           type="text"
           name="search_query"
@@ -42,12 +39,7 @@
       </form>
       <head class="nav-logos">
         <a href="#">
-          <!-- <img
-            src="{{ url_for('static', filename='images/popular.png') }}"
-            alt="Popular Logo"
-            class="nav-logo"
-            title="Popular"
-          /> -->
+
           <img
             src="/static/images/popular.png"
             alt="Popular Logo"
@@ -56,12 +48,7 @@
           />
         </a>
         <a href="#">
-          <!-- <img
-            src="{{ url_for('static', filename='images/chat logo.png') }}"
-            alt="Chat Logo"
-            class="nav-logo"
-            title="Chat"
-          /> -->
+
           <img
             src="/static/images/chat logo.png"
             alt="Chat Logo"
@@ -70,12 +57,7 @@
           />
         </a>
         <a href="/friends">
-          <!-- <img
-            src="{{ url_for('static', filename='images/friends.png') }}"
-            alt="Friends Logo"
-            class="nav-logo"
-            title="Friends"
-          /> -->
+
           <img
             src="/static/images/friends.png"
             alt="Friends Logo"
@@ -99,11 +81,7 @@
     <div class="flex">
       <section class="main">
         <div class="create-post">
-          <!-- <img
-          src="{{ url_for('static', filename='images/goat.jpg') }}"
-          alt="Messi"
-          class="profile-photo"
-        /> -->
+
           <img
             src="/static/images/goat.jpg"
             alt="Messi"
@@ -118,31 +96,19 @@
             placeholder="Create Post"
           /></a>
 
+          <img
+            src="/static/images/img icon.png"
+            alt="img icon"
+            class="img-icon main-icon"
+            title="Create Media Post"
+          />
+          <img
+            src="/static/images/img icon.png"
+            alt="img icon"
+            class="img-icon main-icon"
+            title="Create Media Post"
+          />
 
-          <!-- <img
-          src="{{ url_for('static', filename='images/img icon.png') }}"
-          alt="img icon"
-          class="img-icon main-icon"
-          title="Create Media Post"
-        /> -->
-          <img
-            src="/static/images/img icon.png"
-            alt="img icon"
-            class="img-icon main-icon"
-            title="Create Media Post"
-          />
-          <img
-            src="/static/images/img icon.png"
-            alt="img icon"
-            class="img-icon main-icon"
-            title="Create Media Post"
-          />
-          <!-- <img
-          src="{{ url_for('static', filename='images/link.png') }}"
-          alt="link icon"
-          class="link-icon"
-          title="Attach A Link"
-        /> -->
           <img
             src="/static/images/link.png"
             alt="link icon"
@@ -198,7 +164,7 @@
                     <p>{{ climat }}</p>
                 </div>
                 <div>
-                    <p>Celsius: {{ temp }}</p>
+                    <p>Celsius: {{ temp }}°</p>
                 </div>
                 <div style="font-size: 14px">
                     <p>Pressure: {{ pressure }}</p>

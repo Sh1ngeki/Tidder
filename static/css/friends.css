@@ -5,11 +5,23 @@
     background: #09d25d;
     width: 150px;
     height:40px;
-    top: 0;
     left: 600px;
+    top: -100px;
+
 }
 .add-friends-section {
-
     width: 700px;
+}
+.add-users {
+    position: absolute;
+    top: 60px;
+}
+.add-user-button{
+    margin-left: 470px;
+    border-radius: 30px;
+    color: #000102;
+    background: #09d25d;
+    width: 150px;
+    height:40px;
 
 }
