@@ -212,5 +212,9 @@ def profile(username):
     return render_template('satestod.html', user=current_user, posts=posts, username=username)
 
 
+@app.route('/react')
+def react():
+    pass
+
 if __name__ == "__main__":
     app.run(debug=True)
