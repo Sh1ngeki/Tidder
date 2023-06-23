@@ -101,58 +101,7 @@
     <!-- MAIN -->
     <div class="flex">
       <section class="main">
-        <div class="create-post">
-          <!-- <img
-          src="{{ url_for('static', filename='images/goat.jpg') }}"
-          alt="Messi"
-          class="profile-photo"
-        /> -->
-          <img
-            src="/static/images/goat.jpg"
-            alt="Messi"
-            class="profile-photo"
-          />
-          <div class="circle">`</div>
-          <a href="/createpost">
-            <input
-            type="text"
-            name="main-post"
-            id="main-post"
-            placeholder="Create Post"
-          /></a>
 
-
-          <!-- <img
-          src="{{ url_for('static', filename='images/img icon.png') }}"
-          alt="img icon"
-          class="img-icon main-icon"
-          title="Create Media Post"
-        /> -->
-          <img
-            src="/static/images/img icon.png"
-            alt="img icon"
-            class="img-icon main-icon"
-            title="Create Media Post"
-          />
-          <img
-            src="/static/images/img icon.png"
-            alt="img icon"
-            class="img-icon main-icon"
-            title="Create Media Post"
-          />
-          <!-- <img
-          src="{{ url_for('static', filename='images/link.png') }}"
-          alt="link icon"
-          class="link-icon"
-          title="Attach A Link"
-        /> -->
-          <img
-            src="/static/images/link.png"
-            alt="link icon"
-            class="link-icon"
-            title="Attach A Link"
-          />
-        </div>
         {% for post in posts %}
         <div class="post">
           <h3> <a href="/profile/{{post.users.username}}">{{ post.users.username }}</a>  </h3>
