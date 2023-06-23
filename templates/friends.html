@@ -1,10 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friends</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static//css/app.css" />
+  </head>
+  <body>
+    <!-- ######################################################### -->
+    <!-- HEADER -->
+    <header>
+      <a href="/feed" class="main_header">
+        <img src="/static/images/reddit-32.png" alt="Tidder Logo" />
+        <p class="tidder" id="Montserrat">Tidder</p>
+      </a>
+      <form name="search_query" action="#" type="text">
+        <input
+          type="text"
+          name="search_query"
+          id="search"
+          placeholder="Search Tidder"
+        />
+      </form>
+      <head class="nav-logos">
+        <a href="#">
+          <img
+            src="/static/images/popular.png"
+            alt="Popular Logo"
+            class="nav-logo"
+            title="Popular"
+          />
+        </a>
+        <a href="#">
+          <img
+            src="/static/images/chat logo.png"
+            alt="Chat Logo"
+            class="nav-logo"
+            title="Chat"
+          />
+        </a>
+        <a href="#">
+          <img
+            src="/static/images/friends.png"
+            alt="Friends Logo"
+            class="nav-logo"
+            title="Friends"
+          />
+        </a>
+      </head>
 
-</body>
+      <a href="{{ url_for('logout') }}">
+        <button class="logsign">
+          <strong>LOG OUT</strong>
+        </button>
+      </a>
+      <a href="/profile/{{user.username}}" class="user-info" style="font-size: 17px">
+        <div>{{ user.username }}</div>
+      </a>
+    </header>
+    <!-- ######################################################### -->
+    <!-- MAIN -->
+    <div class="flex">
+      <section class="main">
+        <a href="/add_friends">
+          <div class="post">
+          <button type="submit">Add Friends</button>
+        </div>
+        </a>
+      </section>
+
+
+
+
+    </div>
+    <a href="#"> <button class="back-to-top">Back to top</button> </a>
+  </body>
 </html>
+

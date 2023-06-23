@@ -148,6 +148,23 @@ def feed():
                            pressure=pressure, wind=wind)
 
 
+@app.route('/friends')
+def friends():
+    return render_template('friends.html', user=current_user)
+
+
+@app.route('/add_friends', methods=['GET', 'POST'])
+def add_friends():
+    if request.method == 'POST':
+        search_query = request.form.get('search_query', '')
+        users = Users.query.filter(
+            Users.username.ilike(f'{search_query}%')).all()
+    else:
+        users = Users.query.all()
+
+    return render_template('add_friends.html', user=current_user, users=users)
+
+
 @app.route('/createpost', methods=['GET', 'POST'])
 @login_required
 def createpost():
