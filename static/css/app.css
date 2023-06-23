@@ -25,7 +25,7 @@ body {
 
 .back-to-top {
   position: fixed;
-  top: 695px;
+  bottom: 10px;
   left: 1050px;
   background-color: rgb(12, 176, 86);
   color: #fff;
