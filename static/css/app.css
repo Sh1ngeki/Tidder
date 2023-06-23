@@ -45,6 +45,7 @@ header {
   width: 100%;
   z-index: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: #fff;
   height: 50px;
@@ -132,6 +133,13 @@ form {
 
 /* ############################################################################################################################ */
 /* MAIN */
+
+.main-weather-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 
 .main {
   position: relative;
@@ -224,6 +232,7 @@ form {
   top: 90px; */
   margin-bottom: 30px;
   width: 650px;
+  height: 200px;
   background-color: #fff;
 }
 
@@ -254,8 +263,14 @@ form {
   border-radius: 10px;
 }
 
-.post-flex:hover {
+.post-flex-comment{
+  text-align: center;
+  width: 150px;
+}
+
+.post-flex-comment:hover {
   background-color: #dddcdc;
+  border-radius: 25px;
 }
 
 .block:hover {
@@ -278,12 +293,6 @@ form {
   height: 150px;
   background-color: #fff;
   text-align: center;
-}
-
-.main-weather p {
-  position: absolute;
-  top: 125px;
-  right: 340px;
 }
 
 .main-home {
@@ -401,7 +410,25 @@ form {
 
 .delete-post {
   position: absolute;
-  left: 550px;
+  left: 500px;
+  width: 100px;
+  height: 30px;
+  background-color: #0ca83b;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.delete-post:hover{
+  background-color: #09d25d;
+}
+
+
+.delete-button{
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
 .comment-flash{
