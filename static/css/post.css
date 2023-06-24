@@ -134,8 +134,8 @@ form {
 
 #post {
   position: absolute;
-  top: 300px;
-  left: 268px;
+  top: 300px; 
+  left: 460px;
   width: 610px;
 }
 
@@ -143,7 +143,7 @@ form {
   font-family: "Montserrat", sans-serif;
   position: absolute;
   top: 490px;
-  left: 725px;
+  left: 925px;
   width: 150px;
   height: 50px;
   border: 1px solid #fff;
@@ -159,7 +159,7 @@ form {
 
 .posting-to-tidder {
   position: relative;
-  left: 950px;
+  left: 1150px;
   width: 350px;
   height: 240px;
   background-color: #fff;
