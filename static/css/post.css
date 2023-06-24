@@ -21,6 +21,10 @@ body {
 
 /* HEADER */
 
+.post-header{
+  padding-left: 200px;
+}
+
 header {
   position: fixed;
   top: 0;
